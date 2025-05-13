@@ -1,0 +1,9 @@
+{
+    "url": "https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz",
+    "integrity": "sha256-6zPlH0mhXgI5UM14Jcp0pKK0Pbg1SCWsJPwbfuCeb6M=",
+    "strip_prefix": "zstd-1.5.7",
+    "overlay": {
+        "BUILD.bazel": "sha256-0G3ygPrhQ+12E0GWkXgY9zhpfVLatj+s60qqpZNs9Rw=", 
+        "MODULE.bazel": "sha256-9XgM29b0xbuYWiD4OYRDFv5I+15GMFbzctvDfPq99FA="
+    }
+}
