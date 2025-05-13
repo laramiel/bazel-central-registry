@@ -4,6 +4,6 @@
     "strip_prefix": "zstd-1.5.7",
     "overlay": {
         "BUILD.bazel": "sha256-1b1Z49Hs3fsvUC2m7xvI0NsWks3BPjpIMvK10TS0XmI=", 
-        "MODULE.bazel": "sha256-9XgM29b0xbuYWiD4OYRDFv5I+15GMFbzctvDfPq99FA="
+        "MODULE.bazel": "sha256-hMBBOBAC6Tz/TYIpRY9ePuT7XpKRLcJW4PLO9CD1Xqg="
     }
 }
