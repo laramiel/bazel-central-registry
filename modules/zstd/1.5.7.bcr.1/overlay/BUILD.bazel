@@ -61,7 +61,7 @@ cc_library(
         "ZSTD_BUILD_SHARED=OFF",
         "ZSTD_BUILD_STATIC=ON",
     ] + select({
-    	":zstd_asm_supported": []
+    	":zstd_asm_supported": [],
         "//conditions:default": ["ZSTD_DISABLE_ASM"],
     }),
 )
