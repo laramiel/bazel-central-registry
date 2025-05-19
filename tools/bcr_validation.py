@@ -77,6 +77,8 @@ COLOR = {
     BcrValidationResult.FAILED: RED,
 }
 
+UPSTREAM_MODULES_DIR_URL = "https://bcr.bazel.build/modules"
+
 # TODO(fweikert): switch to a stable release that contains https://github.com/slsa-framework/slsa-verifier/pull/840
 DEFAULT_SLSA_VERIFIER_VERSION = "v2.7.1-rc.1"
 
@@ -198,7 +200,7 @@ def check_github_url(repo_path, source_url):
     # Avoid potential path manipulations with "../"
     normalized_path = os.path.abspath(parts.path)
 
-    # If the URL doesn't starts with https://github.com/<repo_path>, return False
+    # If the URL doesn't start with https://github.com/<repo_path>, return False
     if parts.scheme != "https" or parts.netloc != "github.com" or not normalized_path.startswith(f"/{repo_path}/"):
         return False
 
@@ -965,8 +967,8 @@ def main(argv=None):
         for name, version in module_versions:
             print(f"{name}@{version}")
 
-    # TODO: Read org etc from flags to support forks.
-    upstream = UpstreamRegistry()
+    # TODO: Read url from flags to support forks.
+    upstream = UpstreamRegistry(modules_dir_url=UPSTREAM_MODULES_DIR_URL)
 
     # Validate given module version.
     validator = BcrValidator(registry, upstream, args.fix)
